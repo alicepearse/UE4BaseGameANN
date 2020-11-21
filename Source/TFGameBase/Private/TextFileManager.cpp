@@ -39,9 +39,9 @@ void UTextFileManager::MakeFloatsToString(float VelocityX, float VelocityY, floa
     LocationYstr = FString::SanitizeFloat(LocationY);
 }
 
-void UTextFileManager::Float4ToString(float VelocityX, float VelocityY, float LocationX, float LocationY, FString& StringArray) 
+void UTextFileManager::Float3ToString(float LocationX, float LocationY, float LocationZ, FString& StringArray) 
 {
-    StringArray = FString::Printf(TEXT("%f, %f, %f, %f"), VelocityX, VelocityY, LocationX, LocationY);
+    StringArray = FString::Printf(TEXT("%f, %f, %f"), LocationX, LocationY, LocationZ);
 }
 
 void UTextFileManager::Float2ToString(float LocationX, float LocationY, FString& Floatstr) 
@@ -49,41 +49,18 @@ void UTextFileManager::Float2ToString(float LocationX, float LocationY, FString&
 	Floatstr = FString::Printf(TEXT("%f, %f"), LocationX, LocationY);
 }
 
-// FString UTextFileManager::MakeVector4String(float VelocityX, float VelocityY, float LocationX, float LocationY) 
-// {
-// 	FString Vector4String;
-//     FString VelocityXstr = FString::SanitizeFloat(VelocityX);
-//     // Vector4String.Add(VelocityXstr);
-//     FString VelocityYstr = FString::SanitizeFloat(VelocityY);
-//     // Vector4String.Add(VelocityYstr);
-//     FString LocationXstr = FString::SanitizeFloat(LocationX);
-//     // Vector4String.Add(LocationXstr);
-//     FString LocationYstr = FString::SanitizeFloat(LocationY);
-//     // Vector4String.Add(LocationYstr);
-//     // return Vector4String;
-//     // FString Vector4String = (VelocityX, VelocityY, LocationX, LocationY).ToString();
-// }
+void UTextFileManager::MultiToString(float LocationX, float LocationY, float LocationZ, float DirectionX, float DirectionY, float DirectionZ, float Speed, float Gravity, FString& Floatsstr) 
+{
+	Floatsstr = FString::Printf(TEXT("%f, %f, %f, %f, %f, %f, %f, %f"), LocationX, LocationY, LocationZ, DirectionX, DirectionY, DirectionZ, Speed, Gravity);
+}
 
-// bool UTextFileManager::Vector4ToString(FVector4 Vector4) 
-// {
-// 	FString Vector4String = Vector4.ToString();
-//     return Vector4String;
-// }
+void UTextFileManager::InputsToString(float LocationX, float LocationY, float Angle, float Speed, FString& Floatsstr) 
+{
+	Floatsstr = FString::Printf(TEXT("%f, %f, %f, %f"), LocationX, LocationY, Angle, Speed);
+}
 
-// FString UTextFileManager::Vector4ToString(FVector4 Vector4) 
-// {
-// 	FString Vector4String = Vector4.ToString();
-//     return Vector4String;
-// }
+void UTextFileManager::PVToString(float LocationX, float LocationY, float LocationZ, float VelocityX, float VelocityY, float VelocityZ, float Gravity, FString& Output) 
+{
+	Output =  FString::Printf(TEXT("%f, %f, %f, %f, %f, %f, %f"), LocationX, LocationY, LocationZ, VelocityX, VelocityY, VelocityZ, Gravity);
+}
 
-// FString UTextFileManager::Vector4ArrayToString(TArray<FVector4> Vector4Array) 
-// {
-//     for (index = 0; index < Vector4Array.Length; ++index)
-//     {
-//         FVector Vector4String = Vector4Array[index].ToString();
-//         Vector4StringArray.
-//     }
-// 	// FString Vector4StringArray = Vector4.ToString();
-    
-//     return Vector4StringArray;
-// }
