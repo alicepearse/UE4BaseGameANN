@@ -33,8 +33,13 @@ class TFGAMEBASE_API UTextFileManager : public UBlueprintFunctionLibrary
 	static void PVToString(float LocationX, float LocationY, float LocationZ, float VelocityX, float VelocityY, float VelocityZ, float Gravity, FString& Output);
 
 	UFUNCTION(BlueprintCallable, Category = "Custom", meta = (Keywords = "String"))
+	static void LVToString(float LocationX, float VelocityX, float LocationY, float VelocityY, FString& Output);
+
+	UFUNCTION(BlueprintCallable, Category = "Custom", meta = (Keywords = "String"))
 	static void InputsToString(float LocationX, float LocationY, float Angle, float Speed, FString& Floatsstr);
 };
+
+
 
 
 

@@ -64,3 +64,7 @@ void UTextFileManager::PVToString(float LocationX, float LocationY, float Locati
 	Output =  FString::Printf(TEXT("%f, %f, %f, %f, %f, %f, %f"), LocationX, LocationY, LocationZ, VelocityX, VelocityY, VelocityZ, Gravity);
 }
 
+void UTextFileManager::LVToString(float LocationX, float VelocityX, float LocationY, float VelocityY, FString& Output) 
+{
+	Output =  FString::Printf(TEXT("%f, %f, %f, %f"), LocationX, VelocityX, LocationY, VelocityY);
+}
